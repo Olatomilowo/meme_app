@@ -125,7 +125,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         MaterialPageRoute(builder: ((context) => SignUp())));
                   },
                   child: Padding(
-                    padding: EdgeInsets.only(left: 99),
+                    padding: EdgeInsets.only(left: 80),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:akar_icons_flutter/akar_icons_flutter.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:meme_app/verify_page.dart';
@@ -26,13 +27,14 @@ class _SignUpState extends State<SignUp> {
         backgroundColor: Colors.white,
         body: SafeArea(
             child: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20, top: 41),
+          padding: const EdgeInsets.only(left: 20, right: 20),
           child: SingleChildScrollView(
             child: Form(
               key: _createAccountKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 35),
                   IconButton(
                     icon: const Icon(Icons.arrow_back),
                     onPressed: () {
@@ -242,6 +244,7 @@ class _SignUpState extends State<SignUp> {
                           controller: _phoneNumberController,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
+                              counterText: '',
                               contentPadding: EdgeInsets.only(left: 14),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -252,6 +255,7 @@ class _SignUpState extends State<SignUp> {
                               focusColor: Color(0xffA0A0A0),
                               hintText: 'Enter Phone Number',
                               border: InputBorder.none),
+                          maxLength: 11,
                           validator: (value) {
                             if (_phoneNumberController.text.length < 11) {
                               return 'Enter complete phone number';
@@ -292,6 +296,7 @@ class _SignUpState extends State<SignUp> {
                           keyboardType: TextInputType.text,
                           obscureText: isVisible,
                           decoration: InputDecoration(
+                              // counterText: '',
                               suffixIcon: GestureDetector(
                                   onTap: () {
                                     setState(() {
@@ -299,8 +304,14 @@ class _SignUpState extends State<SignUp> {
                                     });
                                   },
                                   child: isVisible
-                                      ? Icon(Icons.visibility)
-                                      : Icon(Icons.visibility_off)),
+                                      ? Icon(
+                                          AkarIcons.eye_closed,
+                                          color: Color(0xff717171),
+                                        )
+                                      : Icon(
+                                          AkarIcons.eye_open,
+                                          color: Color(0xff717171),
+                                        )),
                               contentPadding:
                                   EdgeInsets.only(left: 14, top: 13),
                               enabledBorder: OutlineInputBorder(

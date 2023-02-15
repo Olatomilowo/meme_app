@@ -22,11 +22,14 @@ class _VerificationState extends State<Verification> {
       body: Form(
         key: _otpKey,
         child: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20, top: 41),
+          padding: const EdgeInsets.only(left: 20, right: 20),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(
+                  height: 70,
+                ),
                 IconButton(
                     onPressed: () {
                       Navigator.pop(context);
@@ -91,7 +94,7 @@ class _VerificationState extends State<Verification> {
                   ),
                 ),
                 SizedBox(
-                  height: 290,
+                  height: 240,
                 ),
                 SizedBox(
                   width: double.infinity,
@@ -101,7 +104,7 @@ class _VerificationState extends State<Verification> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: ((context) => const SuccesfullyVerify())));
+                              builder: ((context) => SuccesfullyVerify())));
                     }),
                     child: Text(
                       'Verify',

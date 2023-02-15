@@ -127,8 +127,14 @@ class _LogInState extends State<LogIn> {
                                       });
                                     },
                                     child: isVisible
-                                        ? Icon(AkarIcons.eye_open)
-                                        : Icon(AkarIcons.eye_closed)),
+                                        ? Icon(
+                                            AkarIcons.eye_closed,
+                                            color: Color(0xff717171),
+                                          )
+                                        : Icon(
+                                            AkarIcons.eye_open,
+                                            color: Color(0xff717171),
+                                          )),
                                 contentPadding:
                                     EdgeInsets.only(left: 14, top: 13),
                                 enabledBorder: OutlineInputBorder(
